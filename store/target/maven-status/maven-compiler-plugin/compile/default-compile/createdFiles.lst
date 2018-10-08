@@ -1,0 +1,6 @@
+com\store\dao\AlbumDAO.class
+com\store\rest\TrackController.class
+com\store\app\Application.class
+com\store\model\Album.class
+com\store\model\Track.class
+com\store\dao\TrackDAO.class
