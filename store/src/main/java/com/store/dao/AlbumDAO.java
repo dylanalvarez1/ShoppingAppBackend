@@ -1,20 +1,29 @@
 package com.store.dao;
 
-import com.store.model.Album;
+import org.springframework.stereotype.Repository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.stereotype.Component;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
-import java.util.ArrayList;
+import com.store.model.*;
 import java.util.Collection;
+import java.util.ArrayList;
 
-@Component
+@Repository
 public class AlbumDAO {
 
     private JdbcTemplate jdbcTemplate;
+    private static final String driverClassName = "com.mysql.jdbc.Driver";
+    private static final String url = "jdbc:mysql://localhost:3306/db_example";
+    private static final String dbUsername = "springuser";
+    private static final String dbPassword = "ThePassword";
 
 
-    @Autowired
+    public AlbumDAO() {
+        this.jdbcTemplate = new JdbcTemplate(this.getDataSource());
+    }
+
+    //@Autowired
     public AlbumDAO(JdbcTemplate jdbcTemp) {
         this.jdbcTemplate = jdbcTemp;
     }
@@ -29,6 +38,18 @@ public class AlbumDAO {
         return albums;
     }
 
+    /***NOTE: For simplicity, other CRUD operations have been removed from this example.***/
+
+    public DriverManagerDataSource getDataSource() {
+        DriverManagerDataSource dataSource = new DriverManagerDataSource();
+        dataSource.setDriverClassName(driverClassName);
+        dataSource.setUrl(url);
+        dataSource.setUsername(dbUsername);
+        dataSource.setPassword(dbPassword);
+        return dataSource;
+
+    }
+
+
 
 }
-
