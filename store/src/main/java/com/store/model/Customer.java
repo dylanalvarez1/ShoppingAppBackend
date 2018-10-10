@@ -17,12 +17,12 @@ public class Customer {
         this.id = id;
     }
 
-    public Customer(String fname, int id) {
+    public Customer(int id, String fname) {
         this.id = id;
         this.fname = fname;
     }
 
-    public Customer(String fname, String lname, int id) {
+    public Customer(int id, String fname, String lname) {
         this.id = id;
         this.fname = fname;
         this.lname = lname;

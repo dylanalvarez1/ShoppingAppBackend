@@ -48,7 +48,6 @@ public class ProductController extends HttpServlet {
     }
 
 
-
     @GET
     @Path("/hello/{param}")
     public Response getMsg(@PathParam("param") String msg) {
