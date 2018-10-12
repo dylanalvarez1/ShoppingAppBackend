@@ -74,7 +74,7 @@ public class Customer {
     public String toString() {
 
         return String.format(
-                "Customer[id=%d, fname='%s', lname='%s', username='%s', email='%s']",
+                "{id:%d, fname:'%s', lname:'%s', username:'%s', email:'%s'}",
                 this.id, this.fname, this.lname, this.username, this.email);
     }
 

@@ -3,6 +3,8 @@ package com.store.rest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 
+//import org.springframework.http.MediaType;
+
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -57,17 +59,20 @@ public class CustomerController extends HttpServlet {
 
     @GET
     @Path("/{customer}")
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response getCustomer(@PathParam("customer") String username) {
-        String output = customerService.getCustomer(username);
-        return Response.status(200).entity(output).build();
+    @Produces("application/json")
+    public Customer getCustomer(@PathParam("customer") String username) {
+        Customer output = customerService.getCustomer(username);
+        //return Response.status(200).entity(output).build();
+        return output;
     }
 
-    @POST
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response createuser(@QueryParam("fname") String fname, @QueryParam("lname") String lname, @QueryParam("username") String username, @QueryParam("email") String email) {
-        String output = customerService.createCustomer(fname, lname, username, email);
-        return Response.status(200).entity(output).build();
+    @GET
+    @Path("/add")
+    @Produces("application/json")
+    public Customer createuser(@QueryParam("fname") String fname, @QueryParam("lname") String lname, @QueryParam("username") String username, @QueryParam("email") String email) {
+        Customer output = customerService.createCustomer(fname, lname, username, email);
+        //return Response.status(200).entity(output).build();
+        return output;
     }
 
 

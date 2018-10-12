@@ -31,16 +31,16 @@ public class CustomerService {
         return retString;
     }
 
-    public String getCustomer(String customer) {
-        String retString = customerDAO.getCustomer(customer);
+    public Customer getCustomer(String customer) {
+        Customer retString = customerDAO.getCustomer(customer);
         return retString;
     }
 
     //TODO: Find the correct way to generate an id
-    public String createCustomer(String fname, String lname, String username, String email) {
+    public Customer createCustomer(String fname, String lname, String username, String email) {
         int id = (int) Math.random() * 100000;
         Customer customer = new Customer(id, fname, lname, username, email);
-        String retString = customerDAO.createCustomer(customer).toString();
+        Customer retString = customerDAO.createCustomer(customer);
         return retString;
     }
 

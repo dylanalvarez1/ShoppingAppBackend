@@ -35,12 +35,12 @@ public class CustomerDAO {
 
     public Customer createCustomer(Customer customer){
         this.jdbcTemplate.update(
-                "INSERT INTO customers (id, fname, lname, username, email) values (?, ?, ?, ?, ?)",
-                customer.getId(), customer.getFname(), customer.getLname(), customer.getUsername(), customer.getEmail());
+                "INSERT INTO customers (fname, lname, username, email) values (?, ?, ?, ?)",
+                customer.getFname(), customer.getLname(), customer.getUsername(), customer.getEmail());
         return customer;
     }
 
-    public String getCustomer(String username) {
+    public Customer getCustomer(String username) {
         Customer returnCustomer = this.jdbcTemplate.queryForObject(
                 "SELECT * FROM customers WHERE username = ?",
                 new Object[]{username},
@@ -50,7 +50,7 @@ public class CustomerDAO {
                         return customer;
                     }
                 });
-        return returnCustomer.toString();
+        return returnCustomer;
     }
 
 
