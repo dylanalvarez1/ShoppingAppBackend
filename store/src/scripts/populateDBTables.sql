@@ -1,7 +1,7 @@
 /*
 The following is an example of a "Stored Procedure"
 */
-
+USE db_store;
 INSERT INTO customers (fname, lname, username,email) VALUES ("Dr. P", "Brown", "prbrown", "philippa.brown");
 SELECT * FROM customers;
 

@@ -30,6 +30,12 @@ public class Application implements CommandLineRunner {
     @Override
     public void run(String... strings) throws Exception {
         AlbumDAO albumDAO = new AlbumDAO(jdbcTemplate);
+        //Populate the database by running a sql script
+        log.info("create database");
+        jdbcTemplate.execute("source C:/Users/Dylan/Desktop/School/programming/WebAppDevProjects/IndividualProject1/store/src/scripts/createDBTables");
+
+        log.info("populate database");
+        jdbcTemplate.execute("source C:/Users/Dylan/Desktop/School/programming/WebAppDevProjects/IndividualProject1/store/src/scripts/populateDBTables");
 
         /** You can now use the provided .sql scripts to create and populate tables.
          TrackDAO trackDAO = new TrackDAO(jdbcTemplate);

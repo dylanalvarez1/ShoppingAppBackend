@@ -1,3 +1,4 @@
+USE db_store;
 SHOW TABLES;
 DROP TABLE IF EXISTS products, customers, orders;
 SHOW TABLES;

@@ -3,40 +3,25 @@ package com.store.model;
 public class Customer {
 
     //id, name, msrp, salePrice, upc, shortDescription, brandName, size, color, gender
-    private int id;
     private String fname, lname, username, email;
 
-    public Customer(int id, String fname, String lname, String username, String email) {
-        this.id = id;
+    public Customer(String fname, String lname, String username, String email) {
         this.fname = fname;
         this.lname = lname;
         this.username = username;
         this.email = email;
     }
-    public Customer(int id) {
-        this.id = id;
-    }
 
-    public Customer(int id, String fname) {
-        this.id = id;
+    public Customer(String fname) {
         this.fname = fname;
     }
 
-    public Customer(int id, String fname, String lname) {
-        this.id = id;
+    public Customer(String fname, String lname) {
         this.fname = fname;
         this.lname = lname;
     }
 
-    //id, name, msrp, salePrice, upc, shortDescription, brandName, size, color, gender
-
-    public int getId() {
-        return this.id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
+    //name, msrp, salePrice, upc, shortDescription, brandName, size, color, gender
 
     public String getFname() {
         return this.fname;
@@ -74,8 +59,8 @@ public class Customer {
     public String toString() {
 
         return String.format(
-                "{id:%d, fname:'%s', lname:'%s', username:'%s', email:'%s'}",
-                this.id, this.fname, this.lname, this.username, this.email);
+                "{fname:'%s', lname:'%s', username:'%s', email:'%s'}",
+                this.fname, this.lname, this.username, this.email);
     }
 
 }

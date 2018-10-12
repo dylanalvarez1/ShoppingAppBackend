@@ -40,33 +40,40 @@ public class CustomerDAO {
         return customer;
     }
 
+    public Customer updateCustomer(Customer customer){
+        this.jdbcTemplate.update(
+                "UPDATE customers SET fname = ?, lname = ?, email = ? WHERE username = ?",
+                customer.getFname(), customer.getLname(), customer.getEmail(), customer.getUsername());
+        return customer;
+    }
+
     public Customer getCustomer(String username) {
         Customer returnCustomer = this.jdbcTemplate.queryForObject(
                 "SELECT * FROM customers WHERE username = ?",
                 new Object[]{username},
                 new RowMapper<Customer>() {
                     public Customer mapRow(ResultSet rs, int rowNum) throws SQLException {
-                        Customer customer = new Customer(rs.getInt("id"), rs.getString("fname"), rs.getString("lname"), rs.getString("username"), rs.getString("email"));
+                        Customer customer = new Customer(rs.getString("fname"), rs.getString("lname"), rs.getString("username"), rs.getString("email"));
                         return customer;
                     }
                 });
         return returnCustomer;
     }
 
-
-    /**
-     public Collection<Album> getAllAlbums(){
-     Collection<Album> albums = new ArrayList<Album>();
-     this.jdbcTemplate.query(
-     "SELECT * FROM albums", new Object[] { },
-     (rs, rowNum) -> new Album(rs.getInt("id"), rs.getString("title"))
-     ).forEach(album -> albums.add(album));
-
-     return albums;
-     }
-     **/
-
-    /***NOTE: For simplicity, other CRUD operations have been removed from this example.***/
+    public boolean deleteCustomer(String username){
+        boolean success = false;
+        try
+        {
+            this.jdbcTemplate.update(
+                    "DELETE FROM customers WHERE username = ?", username);
+            success = true;
+        }
+        catch (RuntimeException runtimeException)
+        {
+            System.err.println("An exception occurred while trying to delete user: " + username);
+        }
+        return success;
+    }
 
     public DriverManagerDataSource getDataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
