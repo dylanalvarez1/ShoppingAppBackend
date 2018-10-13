@@ -21,5 +21,10 @@ public class ProductService {
         return products;
     }
 
+    public Collection<Product> getItemByKeyword(String keyword) {
+        Collection<Product> products = productDAO.getItemByKeyword(keyword);
+        return products;
+    }
+
 
 }

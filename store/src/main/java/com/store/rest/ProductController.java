@@ -31,7 +31,7 @@ import com.store.dao.*;
 import com.store.model.*;
 
 @Controller
-@Path("/products")
+@Path("/items")
 public class ProductController extends HttpServlet {
 
 
@@ -47,11 +47,18 @@ public class ProductController extends HttpServlet {
         }
     }
 
-
     @GET
     @Produces("application/json")
     public Collection<Product> getAllItems() {
         Collection<Product> output = productService.getAllProducts();
+        return output;
+    }
+
+    @GET
+    @Path("/search/{keyword}")
+    @Produces("application/json")
+    public Collection<Product> getItemByKeyword(@PathParam("keyword") String keyword) {
+        Collection<Product> output = productService.getItemByKeyword(keyword);
         return output;
     }
 
