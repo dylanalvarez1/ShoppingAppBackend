@@ -14,21 +14,11 @@ import com.store.model.*;
 public class ProductService {
 
     //@Autowired
-    private AlbumDAO albumDAO = new AlbumDAO();
+    private ProductDAO productDAO = new ProductDAO();
 
-
-    public String getMsg( String msg) {
-        return "Hello : " + msg;
-    }
-
-    public String getAllAlbums() {
-        String retString = "";
-        Collection<Album> albums = albumDAO.getAllAlbums();
-        for (Album album : albums) {
-            retString += album.toString();
-        }
-
-        return retString;
+    public Collection<Product> getAllProducts() {
+        Collection<Product> products = productDAO.getAllProducts();
+        return products;
     }
 
 

@@ -39,28 +39,20 @@ public class ProductController extends HttpServlet {
     private ProductService productService = new ProductService();
 
     public void init(ServletConfig config) {
-        try{
+        try {
             super.init(config);
             SpringBeanAutowiringSupport.processInjectionBasedOnServletContext(this,
                     config.getServletContext());
-        }catch(ServletException e){
+        } catch (ServletException e) {
         }
     }
 
 
     @GET
-    @Path("/hello/{param}")
-    public Response getMsg(@PathParam("param") String msg) {
-        String output = productService.getMsg(msg);
-
-        return Response.status(200).entity(output).build();
-    }
-
-
-    @GET
-    @Produces("text/plain")
-    public String getAllAlbums() {
-        return productService.getAllAlbums();
+    @Produces("application/json")
+    public Collection<Product> getAllItems() {
+        Collection<Product> output = productService.getAllProducts();
+        return output;
     }
 
 }

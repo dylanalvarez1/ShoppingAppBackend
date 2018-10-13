@@ -29,19 +29,14 @@ public class ProductDAO {
         this.jdbcTemplate = jdbcTemp;
     }
 
-    /**
-    public Collection<Album> getAllAlbums(){
-        Collection<Album> albums = new ArrayList<Album>();
+    public Collection<Product> getAllProducts(){
+        Collection<Product> products = new ArrayList<Product>();
         this.jdbcTemplate.query(
-                "SELECT * FROM albums", new Object[] { },
-                (rs, rowNum) -> new Album(rs.getInt("id"), rs.getString("title"))
-        ).forEach(album -> albums.add(album));
-
-        return albums;
+                "SELECT * FROM products", new Object[] { },
+                (rs, rowNum) -> new Product(rs.getInt("itemId"), rs.getString("name"), rs.getFloat("msrp"), rs.getFloat("salePrice"), rs.getInt("upc"), rs.getString("shortDescription"), rs.getString("brandName"), rs.getString("size"), rs.getString("color"), rs.getString("gender"))
+        ).forEach(product -> products.add(product));
+        return products;
     }
-     **/
-
-    /***NOTE: For simplicity, other CRUD operations have been removed from this example.***/
 
     public DriverManagerDataSource getDataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
