@@ -61,10 +61,6 @@ public class ProductDAO {
 
     public Product getItemById(int id){
         String query = "SELECT * FROM products WHERE itemId = ?";
-        //Product product = this.jdbcTemplate.queryForObject(query, new Object[] {id},
-          //      new BeanPropertyRowMapper<>());
-        //return product;
-
         Product product = this.jdbcTemplate.queryForObject(
                 query,
                 new Object[]{id},

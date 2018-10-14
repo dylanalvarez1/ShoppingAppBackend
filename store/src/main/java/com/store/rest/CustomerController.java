@@ -47,16 +47,6 @@ public class CustomerController extends HttpServlet {
         }
     }
 
-
-
-    @GET
-    @Path("/hello/{param}")
-    public Response getMsg(@PathParam("param") String msg) {
-        String output = customerService.getMsg(msg);
-
-        return Response.status(200).entity(output).build();
-    }
-
     @GET
     @Path("/{customer}")
     @Produces("application/json")
@@ -64,6 +54,7 @@ public class CustomerController extends HttpServlet {
         Customer output = customerService.getCustomer(username);
         return output;
     }
+
 
     @DELETE
     @Path("/{customer}")

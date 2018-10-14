@@ -116,7 +116,7 @@ public class Product {
 
         return String.format(
                 "Customer[id=%d, name='%s', msrp='%d', price='%d', upc='%d', description='%s', brand='%s', size='%s', color='%s', gender='%s']",
-                this.id, this.name, this.msrp, this.salePrice, this.upc, this.shortDescription, this.brandName, this.size, this.color, this.gender);
+                this.getId(), this.getName(), this.getMsrp(), this.getSalePrice(), this.getUpc(), this.getShortDescription(), this.getBrandName(), this.getSize(), this.getColor(), this.getGender());
     }
 
 }

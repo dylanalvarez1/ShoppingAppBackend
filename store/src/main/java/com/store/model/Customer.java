@@ -60,7 +60,7 @@ public class Customer {
 
         return String.format(
                 "{fname:'%s', lname:'%s', username:'%s', email:'%s'}",
-                this.fname, this.lname, this.username, this.email);
+                this.getFname(), this.getLname(), this.getUsername(), this.getEmail());
     }
 
 }

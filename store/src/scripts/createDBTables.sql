@@ -10,7 +10,7 @@ CREATE TABLE products(itemId SERIAL, name VARCHAR(255), msrp DECIMAL(6,2), saleP
 
 CREATE TABLE orders(orderId SERIAL, itemId VARCHAR(255), cartId DECIMAL(6,2), UNIQUE(orderId));
 
-CREATE TABLE carts(cartId SERIAL, userID INT, status BOOLEAN);
+CREATE TABLE carts(cartId SERIAL, user VARCHAR(255), UNIQUE(cartId));
 
 SELECT "You will need to decide how to persist cart and order information. Will you amend an existing table or create new one(s)?" AS "";
 SHOW TABLES;
