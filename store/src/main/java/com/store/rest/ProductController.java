@@ -62,4 +62,12 @@ public class ProductController extends HttpServlet {
         return output;
     }
 
+    @GET
+    @Path("/{id}")
+    @Produces("application/json")
+    public Product getItemById(@PathParam("id") int id) {
+        Product output = productService.getItemById(id);
+        return output;
+    }
+
 }

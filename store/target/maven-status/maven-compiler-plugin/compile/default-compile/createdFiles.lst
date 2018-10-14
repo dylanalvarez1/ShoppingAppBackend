@@ -3,6 +3,7 @@ com\store\rest\CustomerController.class
 com\store\model\Customer.class
 com\store\model\Album.class
 com\store\model\Track.class
+com\store\dao\ProductDAO$1.class
 com\store\rest\AlbumService.class
 com\store\rest\AlbumController.class
 com\store\rest\CustomerService.class

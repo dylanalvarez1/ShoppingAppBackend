@@ -1,9 +1,12 @@
 package com.store.dao;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collection;
 
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
+import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -42,7 +45,6 @@ public class ProductDAO {
 
     public Collection<Product> getItemByKeyword(String keyword){
         Collection<Product> products = new ArrayList<Product>();
-        //String query = "SELECT * FROM products WHERE MATCH (name, shortDescription, brandName, size, color, gender) AGAINST ('" +keyword +"');";
         String query = "SELECT * FROM products WHERE ("
                 + "name LIKE '%" + keyword + "%' OR "
                 + "shortDescription LIKE '%" + keyword + "%' OR "
@@ -56,6 +58,26 @@ public class ProductDAO {
         ).forEach(product -> products.add(product));
         return products;
     }
+
+    public Product getItemById(int id){
+        String query = "SELECT * FROM products WHERE itemId = ?";
+        //Product product = this.jdbcTemplate.queryForObject(query, new Object[] {id},
+          //      new BeanPropertyRowMapper<>());
+        //return product;
+
+        Product product = this.jdbcTemplate.queryForObject(
+                query,
+                new Object[]{id},
+                new RowMapper<Product>() {
+                    public Product mapRow(ResultSet rs, int rowNum) throws SQLException {
+                        Product product1 = new Product(rs.getInt("itemId"), rs.getString("name"), rs.getFloat("msrp"), rs.getFloat("salePrice"), rs.getInt("upc"), rs.getString("shortDescription"), rs.getString("brandName"), rs.getString("size"), rs.getString("color"), rs.getString("gender"));
+                        return product1;
+                    }
+                });
+        return product;
+    }
+
+
 
     public DriverManagerDataSource getDataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
