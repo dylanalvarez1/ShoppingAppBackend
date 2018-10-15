@@ -59,7 +59,7 @@ public class CartDAO {
         }
 
         //Find the correct cart for the user
-        Cart cart = this.getCart(username);
+        Cart cart = this.getCartByUsername(username);
 
         //Insert into orders the item and the cartId
         this.jdbcTemplate.update(
@@ -91,10 +91,23 @@ public class CartDAO {
     }
     */
 
-    public Cart getCart(String username) {
+    public Cart getCartByUsername(String username) {
         Cart cart = this.jdbcTemplate.queryForObject(
                 "SELECT * FROM carts WHERE user = ?",
                 new Object[]{username},
+                new RowMapper<Cart>() {
+                    public Cart mapRow(ResultSet rs, int rowNum) throws SQLException {
+                        Cart cart1 = new Cart(rs.getInt("cartId"), rs.getString("user"));
+                        return cart1;
+                    }
+                });
+        return cart;
+    }
+
+    public Cart getCartById(int cartId) {
+        Cart cart = this.jdbcTemplate.queryForObject(
+                "SELECT * FROM carts WHERE cartId = ?",
+                new Object[]{cartId},
                 new RowMapper<Cart>() {
                     public Cart mapRow(ResultSet rs, int rowNum) throws SQLException {
                         Cart cart1 = new Cart(rs.getInt("cartId"), rs.getString("user"));
@@ -108,7 +121,7 @@ public class CartDAO {
         Collection<Product> products = new ArrayList<Product>();
 
         //Get the correct cart based on the username passed in
-        Cart cart = this.getCart(username);
+        Cart cart = this.getCartByUsername(username);
 
         //Get the DAO for product info retrieval
         ProductDAO productDAO = new ProductDAO();
@@ -124,6 +137,20 @@ public class CartDAO {
         return products;
     }
 
+    public boolean deleteItemInCart(int cartId, int productId){
+        boolean success = false;
+        try
+        {
+            this.jdbcTemplate.update(
+                    "DELETE FROM orders WHERE cartId = ? AND itemId = ?", cartId, productId);
+            success = true;
+        }
+        catch (RuntimeException runtimeException)
+        {
+            System.err.println("An exception occurred while trying to delete " + productId +" in cart of user: " + cartId);
+        }
+        return success;
+    }
 
     public boolean deleteCart(String username){
         boolean success = false;
@@ -139,6 +166,8 @@ public class CartDAO {
         }
         return success;
     }
+
+
 
     public DriverManagerDataSource getDataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();

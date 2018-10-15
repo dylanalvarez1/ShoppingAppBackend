@@ -57,14 +57,14 @@ public class CartController extends HttpServlet {
        cartService.insertIntoCart(productId, username);
     }
 
-    /*
+
     @DELETE
-    @Path("/{customer}")
-    public void deleteCustomer(@PathParam("customer") String username) {
-        boolean output = customerService.deleteCustomer(username);
+    public void deleteCustomer(@QueryParam("cartId") int cartId, @QueryParam("productId") int productId) {
+        boolean output = cartService.deleteItemInCart(cartId, productId);
     }
 
 
+    /*
 
     @PUT
     public void updateUser(@QueryParam("fname") String fname, @QueryParam("lname") String lname, @QueryParam("username") String username, @QueryParam("email") String email) {

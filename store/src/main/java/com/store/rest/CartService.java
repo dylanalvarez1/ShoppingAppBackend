@@ -31,6 +31,11 @@ public class CartService {
         cartDAO.insertIntoCart(productId, username);
     }
 
+    public boolean deleteItemInCart(int cartId, int productId) {
+       boolean output = cartDAO.deleteItemInCart(cartId, productId);
+       return output;
+    }
+
     /*
     public Customer getCustomer(String customer) {
         Customer retString = customerDAO.getCustomer(customer);

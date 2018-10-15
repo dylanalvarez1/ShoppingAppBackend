@@ -18,5 +18,6 @@ com\store\dao\CustomerDAO.class
 com\store\rest\ProductService.class
 com\store\dao\ProductDAO.class
 com\store\dao\AlbumDAO.class
+com\store\dao\CartDAO$2.class
 com\store\app\Application.class
 com\store\dao\CartDAO$1.class
