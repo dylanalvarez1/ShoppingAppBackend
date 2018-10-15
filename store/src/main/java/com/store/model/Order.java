@@ -3,14 +3,22 @@ package com.store.model;
 public class Order {
 
     //cartId, itemId
-    private int cartId, itemId;
+    private int orderId, cartId, itemId;
 
-    public Order(int cartId, int itemId) {
+    public Order(int orderId, int cartId, int itemId) {
+        this.orderId = orderId;
         this.cartId = cartId;
         this.itemId = itemId;
     }
 
-    //cartId, itemId
+    //orderId, cartId, itemId
+    public int getId() {
+        return this.orderId;
+    }
+
+    public void setId(int orderId) {
+        this.orderId = orderId;
+    }
 
     public int getCartId() {
         return this.cartId;

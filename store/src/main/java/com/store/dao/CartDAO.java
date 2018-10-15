@@ -69,7 +69,7 @@ public class CartDAO {
     }
 
     public boolean isCartExists(String username) {
-        String sql = "SELECT count(*) FROM carts WHERE username = ?";
+        String sql = "SELECT count(*) FROM carts WHERE user = ?";
         boolean result = false;
 
         int count = this.jdbcTemplate.queryForObject(
@@ -106,17 +106,33 @@ public class CartDAO {
 
     public Collection<Product> getProductsByUser(String username){
         Collection<Product> products = new ArrayList<Product>();
+        Collection<Order> orders = new ArrayList<Order>();
 
         //Get the correct cart based on the username passed in
         Cart cart = this.getCart(username);
 
+        //Get the DAO for product info retrieval
+        ProductDAO productDAO = new ProductDAO();
+
         //Get the orders (based on the cart id, each cart is identified by an id, and has one user)
+        this.jdbcTemplate.query(
+                "SELECT * FROM orders WHERE cartId = ?", new Object[] {cart.getId()},
+                (rs, rowNum) -> new Order(rs.getInt("orderId"), rs.getInt("itemId"), rs.getInt("cartId"))
+        ).forEach(order -> {
+            //This should do the query for every item and add it to products
+           products.add(productDAO.getItemById(order.getItemId()));
+        });
+
+        /*
+        //With the orders, match them up to their respective products and return that
         this.jdbcTemplate.query(
                 "SELECT * FROM orders WHERE cartId = ?", new Object[] {cart.getId()},
                 (rs, rowNum) -> new Product(rs.getInt("itemId"), rs.getString("name"), rs.getFloat("msrp"), rs.getFloat("salePrice"), rs.getInt("upc"), rs.getString("shortDescription"), rs.getString("brandName"), rs.getString("size"), rs.getString("color"), rs.getString("gender"))
         ).forEach(product -> products.add(product));
+        */
         return products;
     }
+
 
     public boolean deleteCart(String username){
         boolean success = false;

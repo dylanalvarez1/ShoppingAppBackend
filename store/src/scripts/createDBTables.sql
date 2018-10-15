@@ -8,7 +8,7 @@ CREATE TABLE products(itemId SERIAL, name VARCHAR(255), msrp DECIMAL(6,2), saleP
 	upc INT, shortDescription VARCHAR(255), brandName VARCHAR(255), 
 	size VARCHAR(255), color VARCHAR(255), gender VARCHAR(255), UNIQUE(itemId));
 
-CREATE TABLE orders(orderId SERIAL, itemId VARCHAR(255), cartId DECIMAL(6,2), UNIQUE(orderId));
+CREATE TABLE orders(orderId SERIAL, itemId VARCHAR(255), cartId INT, UNIQUE(orderId));
 
 CREATE TABLE carts(cartId SERIAL, user VARCHAR(255), UNIQUE(cartId));
 
