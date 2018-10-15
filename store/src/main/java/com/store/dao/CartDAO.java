@@ -106,7 +106,6 @@ public class CartDAO {
 
     public Collection<Product> getProductsByUser(String username){
         Collection<Product> products = new ArrayList<Product>();
-        Collection<Order> orders = new ArrayList<Order>();
 
         //Get the correct cart based on the username passed in
         Cart cart = this.getCart(username);
@@ -119,17 +118,9 @@ public class CartDAO {
                 "SELECT * FROM orders WHERE cartId = ?", new Object[] {cart.getId()},
                 (rs, rowNum) -> new Order(rs.getInt("orderId"), rs.getInt("itemId"), rs.getInt("cartId"))
         ).forEach(order -> {
-            //This should do the query for every item and add it to products
+            //This should do the query for every item and add it to products,
            products.add(productDAO.getItemById(order.getItemId()));
         });
-
-        /*
-        //With the orders, match them up to their respective products and return that
-        this.jdbcTemplate.query(
-                "SELECT * FROM orders WHERE cartId = ?", new Object[] {cart.getId()},
-                (rs, rowNum) -> new Product(rs.getInt("itemId"), rs.getString("name"), rs.getFloat("msrp"), rs.getFloat("salePrice"), rs.getInt("upc"), rs.getString("shortDescription"), rs.getString("brandName"), rs.getString("size"), rs.getString("color"), rs.getString("gender"))
-        ).forEach(product -> products.add(product));
-        */
         return products;
     }
 

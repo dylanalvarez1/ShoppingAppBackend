@@ -5,7 +5,7 @@ public class Order {
     //cartId, itemId
     private int orderId, cartId, itemId;
 
-    public Order(int orderId, int cartId, int itemId) {
+    public Order(int orderId, int itemId, int cartId) {
         this.orderId = orderId;
         this.cartId = cartId;
         this.itemId = itemId;

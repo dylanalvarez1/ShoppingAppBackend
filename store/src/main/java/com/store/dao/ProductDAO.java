@@ -53,17 +53,17 @@ public class ProductDAO {
                 + "color LIKE '%" + keyword + "%' OR "
                 + "gender LIKE '%" + keyword + "%');";
         this.jdbcTemplate.query(
-                query, new Object[] { },
+                query, new Object[] {},
                 (rs, rowNum) -> new Product(rs.getInt("itemId"), rs.getString("name"), rs.getFloat("msrp"), rs.getFloat("salePrice"), rs.getInt("upc"), rs.getString("shortDescription"), rs.getString("brandName"), rs.getString("size"), rs.getString("color"), rs.getString("gender"))
         ).forEach(product -> products.add(product));
         return products;
     }
 
-    public Product getItemById(int id){
+    public Product getItemById(int itemId){
         String query = "SELECT * FROM products WHERE itemId = ?";
         Product product = this.jdbcTemplate.queryForObject(
                 query,
-                new Object[]{id},
+                new Object[]{itemId},
                 new RowMapper<Product>() {
                     public Product mapRow(ResultSet rs, int rowNum) throws SQLException {
                         Product product1 = new Product(rs.getInt("itemId"), rs.getString("name"), rs.getFloat("msrp"), rs.getFloat("salePrice"), rs.getInt("upc"), rs.getString("shortDescription"), rs.getString("brandName"), rs.getString("size"), rs.getString("color"), rs.getString("gender"));

@@ -3,15 +3,76 @@
   <component name="ChangeListManager">
     <list default="true" id="909a3cfc-a9bb-412a-a6d9-14d4125dabf1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output.html" beforeDir="false" afterPath="$PROJECT_DIR$/output.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/store/src/main/java/com/store/dao/CartDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/main/java/com/store/dao/CartDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/src/main/java/com/store/dao/ProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/main/java/com/store/dao/ProductDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/store/src/main/java/com/store/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/main/java/com/store/model/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/src/scripts/createDBTables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/scripts/createDBTables.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/store/target/classes/com/store/dao/CartDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/store/target/classes/com/store/dao/CartDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/classes/com/store/dao/ProductDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/store/target/classes/com/store/dao/ProductDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/store/target/classes/com/store/model/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/store/target/classes/com/store/model/Order.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE.war" beforeDir="false" afterPath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/classes/com/store/dao/CartDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/classes/com/store/dao/CartDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/classes/com/store/model/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/classes/com/store/model/Order.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE.war" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/classes/com/store/app/Application.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/classes/com/store/dao/AlbumDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/classes/com/store/dao/CartDAO$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/classes/com/store/dao/CartDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/classes/com/store/dao/CustomerDAO$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/classes/com/store/dao/CustomerDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/classes/com/store/dao/ProductDAO$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/classes/com/store/dao/ProductDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/classes/com/store/model/Album.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/classes/com/store/model/Cart.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/classes/com/store/model/Customer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/classes/com/store/model/Order.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/classes/com/store/model/Product.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/classes/com/store/model/Track.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/classes/com/store/rest/AlbumController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/classes/com/store/rest/AlbumService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/classes/com/store/rest/CartController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/classes/com/store/rest/CartService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/classes/com/store/rest/CustomerController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/classes/com/store/rest/CustomerService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/classes/com/store/rest/ProductController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/classes/com/store/rest/ProductService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/lib/HikariCP-2.7.9.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/lib/jackson-annotations-2.9.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/lib/jackson-core-2.9.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/lib/jackson-databind-2.9.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/lib/jackson-jaxrs-base-2.9.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/lib/jackson-jaxrs-json-provider-2.3.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/lib/jackson-module-jaxb-annotations-2.9.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/lib/javax.annotation-api-1.3.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/lib/jaxb-api-2.3.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/lib/jersey-bundle-1.19.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/lib/jersey-core-1.19.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/lib/jersey-server-1.19.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/lib/json-20170516.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/lib/jsr311-api-1.1.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/lib/jul-to-slf4j-1.7.25.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/lib/log4j-api-2.10.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/lib/log4j-to-slf4j-2.10.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/lib/logback-classic-1.2.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/lib/logback-core-1.2.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/lib/mysql-connector-java-5.1.46.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/lib/slf4j-api-1.7.25.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/lib/snakeyaml-1.19.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/lib/spring-aop-5.0.7.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/lib/spring-beans-5.0.7.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/lib/spring-boot-2.0.3.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/lib/spring-boot-autoconfigure-2.0.3.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/lib/spring-boot-starter-2.0.3.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/lib/spring-boot-starter-jdbc-2.0.3.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/lib/spring-boot-starter-logging-2.0.3.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/lib/spring-context-5.0.7.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/lib/spring-context-support-5.0.7.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/lib/spring-core-5.0.7.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/lib/spring-expression-5.0.7.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/lib/spring-jcl-5.0.7.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/lib/spring-jdbc-5.0.7.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/lib/spring-tx-5.0.7.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/lib/spring-web-5.0.7.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/index.html" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/store/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,7 +97,7 @@
           <entry key="class" value="1" />
           <entry key="html" value="1" />
           <entry key="iml" value="1" />
-          <entry key="java" value="42" />
+          <entry key="java" value="46" />
           <entry key="properties" value="6" />
           <entry key="readme" value="4" />
           <entry key="xml" value="5" />
@@ -47,7 +108,7 @@
           <entry key="CLASS" value="1" />
           <entry key="HTML" value="1" />
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="42" />
+          <entry key="JAVA" value="46" />
           <entry key="PLAIN_TEXT" value="4" />
           <entry key="Properties" value="6" />
           <entry key="XML" value="5" />
@@ -55,13 +116,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="10451" />
+          <entry key="java" value="10718" />
           <entry key="xml" value="58" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="10451" />
+          <entry key="JAVA" value="10718" />
           <entry key="XML" value="58" />
         </counts>
       </usages-collector>
@@ -73,8 +134,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/rest/CartController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="56" column="7" selection-start-line="56" selection-start-column="7" selection-end-line="56" selection-end-column="7" />
+            <state relative-caret-position="131">
+              <caret line="50" column="60" selection-start-line="50" selection-start-column="60" selection-end-line="50" selection-end-column="60" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -109,8 +170,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/rest/CartService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="178">
-              <caret line="28" selection-start-line="28" selection-end-line="28" />
+            <state relative-caret-position="136">
+              <caret line="25" column="53" selection-start-line="25" selection-start-column="53" selection-end-line="25" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#789#790#0" expanded="true" />
@@ -123,8 +184,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/dao/CartDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="122" column="11" selection-start-line="122" selection-start-column="11" selection-end-line="122" selection-end-column="11" />
+            <state relative-caret-position="533">
+              <caret line="139" column="20" selection-start-line="139" selection-start-column="20" selection-end-line="139" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1308#1309#0" expanded="true" />
@@ -132,7 +193,6 @@
                 <element signature="e#1448#1449#0" expanded="true" />
                 <element signature="e#1492#1493#0" expanded="true" />
                 <element signature="e#2578#2587#0" expanded="true" />
-                <element signature="e#3667#3674#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -141,20 +201,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/model/Cart.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
+            <state relative-caret-position="340">
               <caret line="21" column="27" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#391#392#0" expanded="true" />
-                <element signature="e#425#426#0" expanded="true" />
-                <element signature="e#462#463#0" expanded="true" />
                 <element signature="e#498#499#0" expanded="true" />
-                <element signature="e#529#530#0" expanded="true" />
-                <element signature="e#561#562#0" expanded="true" />
-                <element signature="e#601#602#0" expanded="true" />
-                <element signature="e#633#634#0" expanded="true" />
-                <element signature="e#674#675#0" expanded="true" />
-                <element signature="e#712#713#0" expanded="true" />
+                <element signature="e#534#535#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -163,31 +215,31 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/model/Order.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
+            <state relative-caret-position="119">
+              <caret line="7" column="50" selection-start-line="7" selection-start-column="50" selection-end-line="7" selection-end-column="50" />
               <folding>
-                <element signature="e#320#321#0" expanded="true" />
+                <element signature="e#319#320#0" expanded="true" />
                 <element signature="e#354#355#0" expanded="true" />
-                <element signature="e#395#396#0" expanded="true" />
-                <element signature="e#431#432#0" expanded="true" />
-                <element signature="e#361#362#0" expanded="true" />
-                <element signature="e#395#396#0" expanded="true" />
-                <element signature="e#436#437#0" expanded="true" />
-                <element signature="e#472#473#0" expanded="true" />
-                <element signature="e#414#415#0" expanded="true" />
-                <element signature="e#448#449#0" expanded="true" />
-                <element signature="e#489#490#0" expanded="true" />
-                <element signature="e#525#526#0" expanded="true" />
+                <element signature="e#392#393#0" expanded="true" />
+                <element signature="e#430#431#0" expanded="true" />
+                <element signature="e#460#461#0" expanded="true" />
+                <element signature="e#494#495#0" expanded="true" />
+                <element signature="e#535#536#0" expanded="true" />
+                <element signature="e#571#572#0" expanded="true" />
+                <element signature="e#601#602#0" expanded="true" />
+                <element signature="e#635#636#0" expanded="true" />
+                <element signature="e#676#677#0" expanded="true" />
+                <element signature="e#712#713#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/dao/CustomerDAO.java">
+        <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/app/Application.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="584">
-              <caret line="60" column="5" selection-start-line="60" selection-start-column="5" selection-end-line="60" selection-end-column="5" />
+            <state relative-caret-position="221">
+              <caret line="23" column="44" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -198,8 +250,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/dao/ProductDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="178">
-              <caret line="63" column="33" selection-start-line="63" selection-start-column="33" selection-end-line="63" selection-end-column="33" />
+            <state relative-caret-position="221">
+              <caret line="67" column="52" selection-start-line="67" selection-start-column="52" selection-end-line="67" selection-end-column="52" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -221,6 +273,7 @@
       <find>id</find>
       <find>int</find>
       <find>query</find>
+      <find>order</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -243,13 +296,13 @@
         <option value="$PROJECT_DIR$/store/src/main/java/com/store/dao/CustomerDAO.java" />
         <option value="$PROJECT_DIR$/store/src/main/java/com/store/rest/ProductService.java" />
         <option value="$PROJECT_DIR$/store/src/main/java/com/store/rest/ProductController.java" />
-        <option value="$PROJECT_DIR$/store/src/main/java/com/store/dao/ProductDAO.java" />
         <option value="$PROJECT_DIR$/store/src/main/java/com/store/model/Product.java" />
         <option value="$PROJECT_DIR$/store/src/main/java/com/store/model/Customer.java" />
         <option value="$PROJECT_DIR$/store/src/main/java/com/store/rest/CustomerController.java" />
         <option value="$PROJECT_DIR$/store/src/main/java/com/store/rest/CartController.java" />
         <option value="$PROJECT_DIR$/store/src/main/java/com/store/rest/CartService.java" />
         <option value="$PROJECT_DIR$/store/src/main/java/com/store/model/Cart.java" />
+        <option value="$PROJECT_DIR$/store/src/main/java/com/store/dao/ProductDAO.java" />
         <option value="$PROJECT_DIR$/store/src/main/java/com/store/model/Order.java" />
         <option value="$PROJECT_DIR$/store/src/main/java/com/store/dao/CartDAO.java" />
       </list>
@@ -409,8 +462,8 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539561729812" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Assignment1" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539579178880" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Assignment1Solution" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -451,7 +504,7 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.23298033" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23298033" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -479,7 +532,7 @@
       <window_info anchor="right" id="Ant Build" order="7" weight="0.24962178" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.24659607" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23298033" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -488,23 +541,23 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3289689" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49924356" visible="true" weight="0.3289689" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.3289689" />
-      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50075644" side_tool="true" weight="0.3289689" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.3289689" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.3289689" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Maven Projects" order="1" weight="0.3623298" />
-      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="4" />
-      <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="Theme Preview" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Ant Build" order="7" weight="0.24962178" />
     </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -612,16 +665,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/app/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="34" column="51" selection-start-line="34" selection-start-column="51" selection-end-line="34" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/model/Customer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="155">
@@ -667,16 +710,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/rest/CartController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="56" column="7" selection-start-line="56" selection-start-column="7" selection-end-line="56" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-jdbc/5.0.7.RELEASE/spring-jdbc-5.0.7.RELEASE.jar!/org/springframework/jdbc/core/JdbcTemplate.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2002">
@@ -684,83 +717,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/rest/CartService.java">
+    <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/rest/ProductController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
+        <state relative-caret-position="291">
+          <caret line="68" column="56" selection-start-line="68" selection-start-column="56" selection-end-line="68" selection-end-column="56" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#789#790#0" expanded="true" />
-            <element signature="e#811#812#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/model/Order.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
-          <folding>
-            <element signature="e#320#321#0" expanded="true" />
-            <element signature="e#354#355#0" expanded="true" />
-            <element signature="e#395#396#0" expanded="true" />
-            <element signature="e#431#432#0" expanded="true" />
-            <element signature="e#361#362#0" expanded="true" />
-            <element signature="e#395#396#0" expanded="true" />
-            <element signature="e#436#437#0" expanded="true" />
-            <element signature="e#472#473#0" expanded="true" />
-            <element signature="e#414#415#0" expanded="true" />
-            <element signature="e#448#449#0" expanded="true" />
-            <element signature="e#489#490#0" expanded="true" />
-            <element signature="e#525#526#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/dao/CustomerDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="584">
-          <caret line="60" column="5" selection-start-line="60" selection-start-column="5" selection-end-line="60" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/model/Cart.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="27" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#391#392#0" expanded="true" />
-            <element signature="e#425#426#0" expanded="true" />
-            <element signature="e#462#463#0" expanded="true" />
-            <element signature="e#498#499#0" expanded="true" />
-            <element signature="e#529#530#0" expanded="true" />
-            <element signature="e#561#562#0" expanded="true" />
-            <element signature="e#601#602#0" expanded="true" />
-            <element signature="e#633#634#0" expanded="true" />
-            <element signature="e#674#675#0" expanded="true" />
-            <element signature="e#712#713#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/dao/ProductDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="63" column="33" selection-start-line="63" selection-start-column="33" selection-end-line="63" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/rest/ProductController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="68" column="56" selection-start-line="68" selection-start-column="56" selection-end-line="68" selection-end-column="56" />
+        <state relative-caret-position="285">
+          <caret line="57" column="21" lean-forward="true" selection-start-line="57" selection-start-column="21" selection-end-line="57" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -777,10 +747,85 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/rest/CartController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="50" column="60" selection-start-line="50" selection-start-column="60" selection-end-line="50" selection-end-column="60" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/rest/CartService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="25" column="53" selection-start-line="25" selection-start-column="53" selection-end-line="25" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#789#790#0" expanded="true" />
+            <element signature="e#811#812#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/app/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="23" column="44" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/model/Cart.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="21" column="27" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#498#499#0" expanded="true" />
+            <element signature="e#534#535#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/dao/ProductDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="67" column="52" selection-start-line="67" selection-start-column="52" selection-end-line="67" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/model/Order.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="50" selection-start-line="7" selection-start-column="50" selection-end-line="7" selection-end-column="50" />
+          <folding>
+            <element signature="e#319#320#0" expanded="true" />
+            <element signature="e#354#355#0" expanded="true" />
+            <element signature="e#392#393#0" expanded="true" />
+            <element signature="e#430#431#0" expanded="true" />
+            <element signature="e#460#461#0" expanded="true" />
+            <element signature="e#494#495#0" expanded="true" />
+            <element signature="e#535#536#0" expanded="true" />
+            <element signature="e#571#572#0" expanded="true" />
+            <element signature="e#601#602#0" expanded="true" />
+            <element signature="e#635#636#0" expanded="true" />
+            <element signature="e#676#677#0" expanded="true" />
+            <element signature="e#712#713#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/dao/CartDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="122" column="11" selection-start-line="122" selection-start-column="11" selection-end-line="122" selection-end-column="11" />
+        <state relative-caret-position="533">
+          <caret line="139" column="20" selection-start-line="139" selection-start-column="20" selection-end-line="139" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1308#1309#0" expanded="true" />
@@ -788,7 +833,6 @@
             <element signature="e#1448#1449#0" expanded="true" />
             <element signature="e#1492#1493#0" expanded="true" />
             <element signature="e#2578#2587#0" expanded="true" />
-            <element signature="e#3667#3674#0" expanded="true" />
           </folding>
         </state>
       </provider>
