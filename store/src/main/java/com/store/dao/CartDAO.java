@@ -53,7 +53,6 @@ public class CartDAO {
     }
 
     public void insertIntoCart(int productId, String username) {
-        //String query = "INSERT INTO carts (cartId, user) SELECT * FROM (SELECT '" + productId + "', '"+ username + "') AS tmp WHERE NOT EXISTS ( SELECT user FROM carts WHERE user = '" + username + "') LIMIT 1;";
         if(!isCartExists(username)) {
             //If the cart does not already exist, create it first
            this.createCart(username);
@@ -89,14 +88,6 @@ public class CartDAO {
         return result;
     }
 
-    /*
-    public Customer updateCustomer(Customer customer){
-        this.jdbcTemplate.update(
-                "UPDATE customers SET fname = ?, lname = ?, email = ? WHERE username = ?",
-                customer.getFname(), customer.getLname(), customer.getEmail(), customer.getUsername());
-        return customer;
-    }
-    */
 
     public Cart getCartByUsername(String username) {
         Cart cart = this.jdbcTemplate.queryForObject(
@@ -170,7 +161,42 @@ public class CartDAO {
         return success;
     }
 
-    /*
+    public Collection<Integer> getCartIdsByProduct(int productId) {
+        Collection<Integer> carts = new ArrayList<Integer>();
+        //Use orders (which have a productId) to find a cart
+        this.jdbcTemplate.query(
+                "SELECT cartId FROM orders where itemId = ?", new Object[] {productId},
+                (rs, rowNum) -> new Integer(rs.getInt("cartId"))
+        ).forEach(cart -> carts.add(cart));
+        return carts;
+    }
+
+    public Collection<Customer> listCustomersByPurchase(int productId) {
+        Collection<Customer> customers = new ArrayList<Customer>();
+
+        //select cartIds where orders have the product that was purchased
+        Collection<Integer> cartIds = this.getCartIdsByProduct(productId);
+        Collection<Cart> purchasedCarts = new ArrayList<Cart>();
+
+        //select users from carts where products were purchased
+        cartIds.forEach(cartId -> {
+            this.jdbcTemplate.query("SELECT * FROM carts WHERE cartId = ? AND purchased = ?", new Object[] {cartId, true},
+                    (rs,rowNum) -> new Cart(rs.getInt("cartId"), rs.getString("user"))).forEach(newCart -> purchasedCarts.add(newCart));
+        });
+
+        purchasedCarts.forEach(cart -> {
+            this.jdbcTemplate.query(
+                    "SELECT * FROM customers WHERE username = ?", new Object[] {cart.getUser()},
+                    (rs, rowNum) -> new Customer(rs.getString("fname"), rs.getString("lname"), rs.getString("username"), rs.getString("email"))
+            ).forEach(customer -> {
+                customers.add(customer);
+            });
+        });
+
+        return customers;
+    }
+
+
     public boolean deleteCart(String username){
         boolean success = false;
         try
@@ -185,7 +211,7 @@ public class CartDAO {
         }
         return success;
     }
-    */
+
 
 
 

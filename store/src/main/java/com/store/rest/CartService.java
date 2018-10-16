@@ -27,6 +27,11 @@ public class CartService {
         return products;
     }
 
+    public Collection<Customer> listCustomersByPurchase(int productId) {
+        Collection<Customer> output = cartDAO.listCustomersByPurchase(productId);
+        return output;
+    }
+
     public void insertIntoCart(int productId, String username) {
         cartDAO.insertIntoCart(productId, username);
     }
@@ -40,28 +45,5 @@ public class CartService {
        return output;
     }
 
-    /*
-    public Customer getCustomer(String customer) {
-        Customer retString = customerDAO.getCustomer(customer);
-        return retString;
-    }
-
-    public Customer createCustomer(String fname, String lname, String username, String email) {
-        Customer customer = new Customer(fname, lname, username, email);
-        Customer retString = customerDAO.createCustomer(customer);
-        return retString;
-    }
-
-    public Customer updateCustomer(String fname, String lname, String username, String email) {
-        Customer customer = new Customer(fname, lname, username, email);
-        Customer retString = customerDAO.updateCustomer(customer);
-        return retString;
-    }
-
-    public boolean deleteCustomer(String username) {
-        boolean success = customerDAO.deleteCustomer(username);
-        return success;
-    }
-    */
 
 }

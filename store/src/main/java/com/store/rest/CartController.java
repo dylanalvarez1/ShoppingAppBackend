@@ -52,6 +52,16 @@ public class CartController extends HttpServlet {
         return output;
     }
 
+
+    @GET
+    @Path("/products")
+    @Produces("application/json")
+    public Collection<Customer> listCustomersByPurchase(@QueryParam("productId") int productId) {
+        Collection<Customer> output = cartService.listCustomersByPurchase(productId);
+        return output;
+    }
+
+
     @POST
     public void createCart(@QueryParam("productId") int productId, @QueryParam("username") String username) {
        cartService.insertIntoCart(productId, username);
