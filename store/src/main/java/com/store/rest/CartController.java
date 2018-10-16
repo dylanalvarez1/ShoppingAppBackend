@@ -57,6 +57,12 @@ public class CartController extends HttpServlet {
        cartService.insertIntoCart(productId, username);
     }
 
+    @PUT
+    @Path("purchase/{cartId}")
+    public void purchaseCart(@PathParam("cartId") int cartId) {
+        cartService.purchaseCart(cartId);
+    }
+
 
     @DELETE
     public void deleteCustomer(@QueryParam("cartId") int cartId, @QueryParam("productId") int productId) {

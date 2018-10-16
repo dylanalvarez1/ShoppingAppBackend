@@ -1,6 +1,7 @@
 package com.store.dao;
 
 import com.store.model.Customer;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
@@ -47,8 +48,8 @@ public class CartDAO {
 
     public void createCart(String user){
         this.jdbcTemplate.update(
-                "INSERT INTO carts (user) values (?)",
-                user);
+                "INSERT INTO carts (user, purchased) values (?, ?)",
+                user, false);
     }
 
     public void insertIntoCart(int productId, String username) {
@@ -68,12 +69,18 @@ public class CartDAO {
 
     }
 
+    public void purchaseCart(int cartId) {
+        this.jdbcTemplate.update(
+                "UPDATE carts SET purchased = ? WHERE cartId = ?",
+                true, cartId);
+    }
+
     public boolean isCartExists(String username) {
-        String sql = "SELECT count(*) FROM carts WHERE user = ?";
+        String sql = "SELECT count(*) FROM carts WHERE user = ? AND purchased = ?";
         boolean result = false;
 
         int count = this.jdbcTemplate.queryForObject(
-                sql, new Object[] { username }, Integer.class);
+                sql, new Object[] {username, false}, Integer.class);
 
         if (count > 0) {
             result = true;
@@ -93,8 +100,8 @@ public class CartDAO {
 
     public Cart getCartByUsername(String username) {
         Cart cart = this.jdbcTemplate.queryForObject(
-                "SELECT * FROM carts WHERE user = ?",
-                new Object[]{username},
+                "SELECT * FROM carts WHERE user = ? AND purchased = ?",
+                new Object[]{username, false},
                 new RowMapper<Cart>() {
                     public Cart mapRow(ResultSet rs, int rowNum) throws SQLException {
                         Cart cart1 = new Cart(rs.getInt("cartId"), rs.getString("user"));
@@ -106,8 +113,8 @@ public class CartDAO {
 
     public Cart getCartById(int cartId) {
         Cart cart = this.jdbcTemplate.queryForObject(
-                "SELECT * FROM carts WHERE cartId = ?",
-                new Object[]{cartId},
+                "SELECT * FROM carts WHERE cartId = ? AND purchased = ?",
+                new Object[]{cartId, false},
                 new RowMapper<Cart>() {
                     public Cart mapRow(ResultSet rs, int rowNum) throws SQLException {
                         Cart cart1 = new Cart(rs.getInt("cartId"), rs.getString("user"));
@@ -139,19 +146,31 @@ public class CartDAO {
 
     public boolean deleteItemInCart(int cartId, int productId){
         boolean success = false;
+        Cart cart = getCartById(cartId);
+
         try
         {
-            this.jdbcTemplate.update(
-                    "DELETE FROM orders WHERE cartId = ? AND itemId = ?", cartId, productId);
-            success = true;
+            if(isCartExists(cart.getUser()))
+            {
+                this.jdbcTemplate.update(
+                        "DELETE FROM orders WHERE cartId = ? AND itemId = ?", cartId, productId);
+                success = true;
+            }
+            else {
+                System.err.println("An error occured: this cart has already been purchased, you cannot remove an order from it");
+            }
         }
         catch (RuntimeException runtimeException)
         {
             System.err.println("An exception occurred while trying to delete " + productId +" in cart of user: " + cartId);
         }
+        
+
+
         return success;
     }
 
+    /*
     public boolean deleteCart(String username){
         boolean success = false;
         try
@@ -166,6 +185,7 @@ public class CartDAO {
         }
         return success;
     }
+    */
 
 
 
