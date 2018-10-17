@@ -18,9 +18,8 @@ public class CustomerService {
     private CustomerDAO customerDAO = new CustomerDAO();
 
 
-    public Customer getCustomer(String customer) {
-        Customer retString = customerDAO.getCustomer(customer);
-        return retString;
+    public Response getCustomer(String customer) {
+        return customerDAO.getCustomer(customer);
     }
 
     public Response createCustomer(String fname, String lname, String username, String email) {
@@ -29,10 +28,10 @@ public class CustomerService {
         return output;
     }
 
-    public Customer updateCustomer(String fname, String lname, String username, String email) {
+    public Response updateCustomer(String fname, String lname, String username, String email) {
         Customer customer = new Customer(fname, lname, username, email);
-        Customer retString = customerDAO.updateCustomer(customer);
-        return retString;
+        Response output = customerDAO.updateCustomer(customer);
+        return output;
     }
 
     public Response deleteCustomer(String username) {

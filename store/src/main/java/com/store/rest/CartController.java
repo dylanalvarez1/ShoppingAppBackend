@@ -47,36 +47,40 @@ public class CartController extends HttpServlet {
 
     @GET
     @Produces("application/json")
-    public Collection<Product> getCustomer(@QueryParam("username") String username) {
-        Collection<Product> output = cartService.getProductsByUser(username);
+    public Response getCustomer(@QueryParam("username") String username) {
+       Response output = cartService.getProductsByUser(username);
         return output;
     }
 
 
+    //In the project description, the path is supposed to be "/", but I was getting erros
+    //This explains why it was wrong
+    //https://stackoverflow.com/questions/17270475/two-get-methods-with-different-query-parameters-rest
     @GET
     @Path("/products")
     @Produces("application/json")
-    public Collection<Customer> listCustomersByPurchase(@QueryParam("productId") int productId) {
-        Collection<Customer> output = cartService.listCustomersByPurchase(productId);
+    public Response listCustomersByPurchase(@QueryParam("productId") int productId) {
+        Response output = cartService.listCustomersByPurchase(productId);
         return output;
     }
 
 
     @POST
-    public void createCart(@QueryParam("productId") int productId, @QueryParam("username") String username) {
-       cartService.insertIntoCart(productId, username);
+    public Response createCart(@QueryParam("productId") int productId, @QueryParam("username") String username) {
+       return cartService.insertIntoCart(productId, username);
     }
 
     @PUT
     @Path("purchase/{cartId}")
-    public void purchaseCart(@PathParam("cartId") int cartId) {
-        cartService.purchaseCart(cartId);
+    public Response purchaseCart(@PathParam("cartId") int cartId) {
+        return cartService.purchaseCart(cartId);
     }
 
 
     @DELETE
-    public void deleteCustomer(@QueryParam("cartId") int cartId, @QueryParam("productId") int productId) {
-        boolean output = cartService.deleteItemInCart(cartId, productId);
+    public Response deleteCustomer(@QueryParam("cartId") int cartId, @QueryParam("productId") int productId) {
+       Response output = cartService.deleteItemInCart(cartId, productId);
+       return output;
     }
 
 }

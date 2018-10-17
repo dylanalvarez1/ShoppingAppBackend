@@ -10,24 +10,23 @@ import java.util.ArrayList;
 import com.store.dao.*;
 import com.store.model.*;
 
+import javax.ws.rs.core.Response;
+
 @Service
 public class ProductService {
 
     private ProductDAO productDAO = new ProductDAO();
 
-    public Collection<Product> getAllProducts() {
-        Collection<Product> products = productDAO.getAllProducts();
-        return products;
+    public Response getAllProducts() {
+        return productDAO.getAllProducts();
     }
 
-    public Collection<Product> getItemByKeyword(String keyword) {
-        Collection<Product> products = productDAO.getItemByKeyword(keyword);
-        return products;
+    public Response getItemByKeyword(String keyword) {
+       return productDAO.getItemByKeyword(keyword);
     }
 
-    public Product getItemById(int id) {
-        Product product = productDAO.getItemById(id);
-        return product;
+    public Response getItemById(int id) {
+       return productDAO.getItemById(id);
     }
 
 

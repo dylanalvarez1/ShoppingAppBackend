@@ -30,7 +30,7 @@ public class CustomerDAO {
         this.jdbcTemplate = new JdbcTemplate(this.getDataSource());
     }
 
-    //@Autowired
+
     public CustomerDAO(JdbcTemplate jdbcTemp) {
         this.jdbcTemplate = jdbcTemp;
     }
@@ -51,14 +51,23 @@ public class CustomerDAO {
         return Response.status(201).build();
     }
 
-    public Customer updateCustomer(Customer customer){
+    public Response updateCustomer(Customer customer){
+        if(!this.isCustomerExists(customer.getUsername()))
+        {
+            return Response.status(404).build();
+        }
+
         this.jdbcTemplate.update(
                 "UPDATE customers SET fname = ?, lname = ?, email = ? WHERE username = ?",
                 customer.getFname(), customer.getLname(), customer.getEmail(), customer.getUsername());
-        return customer;
+        return Response.status(200).build();
     }
 
-    public Customer getCustomer(String username) {
+    public Response getCustomer(String username) {
+        if(!this.isCustomerExists(username))
+        {
+            return Response.status(404).build();
+        }
         Customer returnCustomer = this.jdbcTemplate.queryForObject(
                 "SELECT * FROM customers WHERE username = ?",
                 new Object[]{username},
@@ -68,7 +77,7 @@ public class CustomerDAO {
                         return customer;
                     }
                 });
-        return returnCustomer;
+        return Response.status(200).entity(returnCustomer).build();
     }
 
     public Response deleteCustomer(String username){

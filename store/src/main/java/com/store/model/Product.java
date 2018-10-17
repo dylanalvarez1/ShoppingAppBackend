@@ -2,9 +2,12 @@ package com.store.model;
 
 public class Product {
 
-    private int id, upc;
+    private int id;
+
+    private String name;
     private float msrp, salePrice;
-    private String name, shortDescription, brandName, size, color, gender;
+    private int upc;
+    private String shortDescription, brandName, size, color, gender;
 
     public Product(int id, String name, float msrp, float salePrice, int upc, String shortDescription, String brandName, String size, String color, String gender) {
         this.id = id;

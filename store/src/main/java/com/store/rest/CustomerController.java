@@ -50,8 +50,7 @@ public class CustomerController extends HttpServlet {
     @Path("/{customer}")
     @Produces("application/json")
     public Response getCustomer(@PathParam("customer") String username) {
-        Customer output = customerService.getCustomer(username);
-        return Response.status(200).entity(output).build();
+       return customerService.getCustomer(username);
     }
 
     @DELETE
@@ -63,13 +62,11 @@ public class CustomerController extends HttpServlet {
     @POST
     public Response createUser(@QueryParam("fname") String fname, @QueryParam("lname") String lname, @QueryParam("username") String username, @QueryParam("email") String email) {
         return customerService.createCustomer(fname, lname, username, email);
-
     }
 
     @PUT
     public Response updateUser(@QueryParam("fname") String fname, @QueryParam("lname") String lname, @QueryParam("username") String username, @QueryParam("email") String email) {
-        Customer output = customerService.updateCustomer(fname, lname, username, email);
-        return Response.status(200).build();
+        return customerService.updateCustomer(fname, lname, username, email);
     }
 
 }

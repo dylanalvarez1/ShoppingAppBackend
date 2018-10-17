@@ -12,6 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import com.store.model.*;
+
+import javax.ws.rs.core.Response;
 import java.util.Collection;
 import java.util.ArrayList;
 
@@ -29,21 +31,25 @@ public class ProductDAO {
         this.jdbcTemplate = new JdbcTemplate(this.getDataSource());
     }
 
-    //@Autowired
+
     public ProductDAO(JdbcTemplate jdbcTemp) {
         this.jdbcTemplate = jdbcTemp;
     }
 
-    public Collection<Product> getAllProducts(){
+    public Response getAllProducts(){
         Collection<Product> products = new ArrayList<Product>();
         this.jdbcTemplate.query(
                 "SELECT * FROM products", new Object[] { },
                 (rs, rowNum) -> new Product(rs.getInt("itemId"), rs.getString("name"), rs.getFloat("msrp"), rs.getFloat("salePrice"), rs.getInt("upc"), rs.getString("shortDescription"), rs.getString("brandName"), rs.getString("size"), rs.getString("color"), rs.getString("gender"))
         ).forEach(product -> products.add(product));
-        return products;
+        if(products.size() == 0)
+        {
+            return Response.status(404).build();
+        }
+        return Response.status(200).entity(products).build();
     }
 
-    public Collection<Product> getItemByKeyword(String keyword){
+    public Response getItemByKeyword(String keyword){
         Collection<Product> products = new ArrayList<Product>();
         String query = "SELECT * FROM products WHERE ("
                 + "name LIKE '%" + keyword + "%' OR "
@@ -56,10 +62,18 @@ public class ProductDAO {
                 query, new Object[] {},
                 (rs, rowNum) -> new Product(rs.getInt("itemId"), rs.getString("name"), rs.getFloat("msrp"), rs.getFloat("salePrice"), rs.getInt("upc"), rs.getString("shortDescription"), rs.getString("brandName"), rs.getString("size"), rs.getString("color"), rs.getString("gender"))
         ).forEach(product -> products.add(product));
-        return products;
+        if(products.size() == 0)
+        {
+            return Response.status(404).build();
+        }
+        return Response.status(200).entity(products).build();
     }
 
-    public Product getItemById(int itemId){
+    public Response getItemById(int itemId){
+        if(!isProductExists(itemId))
+        {
+            return Response.status(404).build();
+        }
         String query = "SELECT * FROM products WHERE itemId = ?";
         Product product = this.jdbcTemplate.queryForObject(
                 query,
@@ -70,7 +84,21 @@ public class ProductDAO {
                         return product1;
                     }
                 });
-        return product;
+        return Response.status(200).entity(product).build();
+    }
+
+    public boolean isProductExists(int id) {
+        String sql = "SELECT count(*) FROM products WHERE itemId = ?";
+        boolean result = false;
+
+        int count = this.jdbcTemplate.queryForObject(
+                sql, new Object[] {id}, Integer.class);
+
+        if (count > 0) {
+            result = true;
+        }
+
+        return result;
     }
 
 

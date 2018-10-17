@@ -9,33 +9,33 @@ import java.util.Collection;
 import com.store.dao.*;
 import com.store.model.*;
 
+import javax.ws.rs.core.Response;
+
 @Service
 public class CartService {
 
 
     private CartDAO cartDAO = new CartDAO();
 
-    public Collection<Product> getProductsByUser(String username) {
-        Collection<Product> products = cartDAO.getProductsByUser(username);
-        return products;
+    public Response getProductsByUser(String username) {
+       return cartDAO.getProductsByUser(username);
+
     }
 
-    public Collection<Customer> listCustomersByPurchase(int productId) {
-        Collection<Customer> output = cartDAO.listCustomersByPurchase(productId);
-        return output;
+    public Response listCustomersByPurchase(int productId) {
+        return cartDAO.listCustomersByPurchase(productId);
     }
 
-    public void insertIntoCart(int productId, String username) {
-        cartDAO.insertIntoCart(productId, username);
+    public Response insertIntoCart(int productId, String username) {
+        return cartDAO.insertIntoCart(productId, username);
     }
 
-    public void purchaseCart(int cartId) {
-        cartDAO.purchaseCart(cartId);
+    public Response purchaseCart(int cartId) {
+        return cartDAO.purchaseCart(cartId);
     }
 
-    public boolean deleteItemInCart(int cartId, int productId) {
-       boolean output = cartDAO.deleteItemInCart(cartId, productId);
-       return output;
+    public Response deleteItemInCart(int cartId, int productId) {
+      return cartDAO.deleteItemInCart(cartId, productId);
     }
 
 
