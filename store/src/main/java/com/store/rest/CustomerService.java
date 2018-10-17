@@ -15,23 +15,8 @@ import javax.ws.rs.core.Response;
 @Service
 public class CustomerService {
 
-    //@Autowired
-    private AlbumDAO albumDAO = new AlbumDAO();
     private CustomerDAO customerDAO = new CustomerDAO();
 
-    public String getMsg( String msg) {
-        return "Hello : " + msg;
-    }
-
-    public String getAllAlbums() {
-        String retString = "";
-        Collection<Album> albums = albumDAO.getAllAlbums();
-        for (Album album : albums) {
-            retString += album.toString();
-        }
-
-        return retString;
-    }
 
     public Customer getCustomer(String customer) {
         Customer retString = customerDAO.getCustomer(customer);

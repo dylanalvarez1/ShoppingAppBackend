@@ -33,7 +33,7 @@ import com.store.model.*;
 @Path("/carts")
 public class CartController extends HttpServlet {
 
-    //@Autowired
+
     private CartService cartService = new CartService();
 
     public void init(ServletConfig config) {

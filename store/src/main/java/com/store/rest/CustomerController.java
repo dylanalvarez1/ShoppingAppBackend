@@ -35,7 +35,6 @@ import com.store.model.*;
 public class CustomerController extends HttpServlet {
 
 
-    //@Autowired
     private CustomerService customerService = new CustomerService();
 
     public void init(ServletConfig config) {

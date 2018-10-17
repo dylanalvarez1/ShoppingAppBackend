@@ -29,33 +29,16 @@ public class Application implements CommandLineRunner {
 
     @Override
     public void run(String... strings) throws Exception {
-        AlbumDAO albumDAO = new AlbumDAO(jdbcTemplate);
+
         //Populate the database by running a sql script
+        /*
         log.info("create database");
         jdbcTemplate.execute("source C:/Users/Dylan/Desktop/School/programming/WebAppDevProjects/IndividualProject1/store/src/scripts/createDBTables");
 
         log.info("populate database");
         jdbcTemplate.execute("source C:/Users/Dylan/Desktop/School/programming/WebAppDevProjects/IndividualProject1/store/src/scripts/populateDBTables");
+        */
 
-        /** You can now use the provided .sql scripts to create and populate tables.
-         TrackDAO trackDAO = new TrackDAO(jdbcTemplate);
-
-         log.info("Creating tables");
-
-         jdbcTemplate.execute("DROP TABLE tracks IF EXISTS");
-         jdbcTemplate.execute("CREATE TABLE tracks(" +
-         "id SERIAL, title VARCHAR(255), album INT)");
-         trackDAO.createTrack(new Track("Track 1", 42));
-         trackDAO.createTrack(new Track("Track 2", 42));
-         trackDAO.createTrack(new Track ("Track 3", 42));
-
-         jdbcTemplate.execute("DROP TABLE albums IF EXISTS");
-         jdbcTemplate.execute("CREATE TABLE albums(" +
-         "id INT, title VARCHAR(255))");
-
-         albumDAO.createAlbum(new Album (42, "Album 1"));
-         */
-        albumDAO.getAllAlbums().forEach(album -> log.info(album.toString()));
 
     }
 }
