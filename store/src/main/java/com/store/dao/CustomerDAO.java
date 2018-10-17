@@ -11,6 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import com.store.model.*;
+
+import javax.ws.rs.core.Response;
 import java.util.Collection;
 import java.util.ArrayList;
 
@@ -33,11 +35,20 @@ public class CustomerDAO {
         this.jdbcTemplate = jdbcTemp;
     }
 
-    public Customer createCustomer(Customer customer){
-        this.jdbcTemplate.update(
-                "INSERT INTO customers (fname, lname, username, email) values (?, ?, ?, ?)",
-                customer.getFname(), customer.getLname(), customer.getUsername(), customer.getEmail());
-        return customer;
+    public Response createCustomer(Customer customer){
+        if(this.isCustomerExists(customer.getUsername()))
+        {
+            //This means that this username already exists
+            return Response.status(409).build();
+        }
+        else
+        { //If the user is not in the database, insert it
+            this.jdbcTemplate.update(
+                    "INSERT INTO customers (fname, lname, username, email) values (?, ?, ?, ?)",
+                    customer.getFname(), customer.getLname(), customer.getUsername(), customer.getEmail());
+        }
+
+        return Response.status(200).build();
     }
 
     public Customer updateCustomer(Customer customer){
@@ -60,19 +71,38 @@ public class CustomerDAO {
         return returnCustomer;
     }
 
-    public boolean deleteCustomer(String username){
-        boolean success = false;
+    public Response deleteCustomer(String username){
+        if(!this.isCustomerExists(username))
+        {
+            return Response.status(404).build();
+        }
         try
         {
             this.jdbcTemplate.update(
                     "DELETE FROM customers WHERE username = ?", username);
-            success = true;
+            return Response.status(200).build();
+
         }
         catch (RuntimeException runtimeException)
         {
             System.err.println("An exception occurred while trying to delete user: " + username);
+            return Response.status(404).build();
         }
-        return success;
+
+    }
+
+    public boolean isCustomerExists(String username) {
+        String sql = "SELECT count(*) FROM customers WHERE username = ?";
+        boolean result = false;
+
+        int count = this.jdbcTemplate.queryForObject(
+                sql, new Object[] {username}, Integer.class);
+
+        if (count > 0) {
+            result = true;
+        }
+
+        return result;
     }
 
     public DriverManagerDataSource getDataSource() {

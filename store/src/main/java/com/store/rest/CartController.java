@@ -79,25 +79,4 @@ public class CartController extends HttpServlet {
         boolean output = cartService.deleteItemInCart(cartId, productId);
     }
 
-
-    /*
-
-    @PUT
-    public void updateUser(@QueryParam("fname") String fname, @QueryParam("lname") String lname, @QueryParam("username") String username, @QueryParam("email") String email) {
-        Customer output = customerService.updateCustomer(fname, lname, username, email);
-    }
-
-    */
-
-
-
-
-    /*
-    @GET
-    @Produces("text/plain")
-    public String getAllAlbums() {
-        return customerService.getAllAlbums();
-    }
-    */
-
 }

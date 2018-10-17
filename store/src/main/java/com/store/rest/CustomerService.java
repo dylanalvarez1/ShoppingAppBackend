@@ -10,6 +10,8 @@ import java.util.ArrayList;
 import com.store.dao.*;
 import com.store.model.*;
 
+import javax.ws.rs.core.Response;
+
 @Service
 public class CustomerService {
 
@@ -36,10 +38,10 @@ public class CustomerService {
         return retString;
     }
 
-    public Customer createCustomer(String fname, String lname, String username, String email) {
+    public Response createCustomer(String fname, String lname, String username, String email) {
         Customer customer = new Customer(fname, lname, username, email);
-        Customer retString = customerDAO.createCustomer(customer);
-        return retString;
+        Response output = customerDAO.createCustomer(customer);
+        return output;
     }
 
     public Customer updateCustomer(String fname, String lname, String username, String email) {
@@ -48,9 +50,9 @@ public class CustomerService {
         return retString;
     }
 
-    public boolean deleteCustomer(String username) {
-        boolean success = customerDAO.deleteCustomer(username);
-        return success;
+    public Response deleteCustomer(String username) {
+        Response output = customerDAO.deleteCustomer(username);
+        return output;
     }
 
 
