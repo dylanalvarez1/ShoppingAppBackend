@@ -49,25 +49,25 @@ public class ProductController extends HttpServlet {
 
     @GET
     @Produces("application/json")
-    public Collection<Product> getAllItems() {
+    public Response getAllItems() {
         Collection<Product> output = productService.getAllProducts();
-        return output;
+        return Response.status(200).entity(output).build();
     }
 
     @GET
     @Path("/search/{keyword}")
     @Produces("application/json")
-    public Collection<Product> getItemByKeyword(@PathParam("keyword") String keyword) {
+    public Response getItemByKeyword(@PathParam("keyword") String keyword) {
         Collection<Product> output = productService.getItemByKeyword(keyword);
-        return output;
+        return Response.status(200).entity(output).build();
     }
 
     @GET
     @Path("/{id}")
     @Produces("application/json")
-    public Product getItemById(@PathParam("id") int id) {
+    public Response getItemById(@PathParam("id") int id) {
         Product output = productService.getItemById(id);
-        return output;
+        return Response.status(200).entity(output).build();
     }
 
 }

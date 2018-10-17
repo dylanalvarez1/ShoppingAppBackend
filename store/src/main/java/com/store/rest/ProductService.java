@@ -13,7 +13,6 @@ import com.store.model.*;
 @Service
 public class ProductService {
 
-    //@Autowired
     private ProductDAO productDAO = new ProductDAO();
 
     public Collection<Product> getAllProducts() {

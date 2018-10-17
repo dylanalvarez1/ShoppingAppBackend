@@ -48,7 +48,7 @@ public class CustomerDAO {
                     customer.getFname(), customer.getLname(), customer.getUsername(), customer.getEmail());
         }
 
-        return Response.status(200).build();
+        return Response.status(201).build();
     }
 
     public Customer updateCustomer(Customer customer){
@@ -80,7 +80,7 @@ public class CustomerDAO {
         {
             this.jdbcTemplate.update(
                     "DELETE FROM customers WHERE username = ?", username);
-            return Response.status(200).build();
+            return Response.status(204).build();
 
         }
         catch (RuntimeException runtimeException)
